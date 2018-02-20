@@ -4,6 +4,7 @@
       <h3>Welcome to Nuxt.js auth example</h3>
       <div class="mt-1">
         <template v-if="$auth.state.loggedIn">
+          <h4 v-if="$auth.state.user.email" v-text="$auth.state.user.email"></h4>
           <b-btn class="ml-3" variant="info" to="/secure">Secure</b-btn>
           <b-btn class="ml-3" variant="danger" @click="$auth.logout()">Logout</b-btn>
         </template>

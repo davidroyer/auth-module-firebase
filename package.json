@@ -25,10 +25,15 @@
     "heroku-postbuild": "nuxt build examples/demo",
     "start": "nuxt start examples/demo",
     "dev": "nuxt examples/demo",
+    "build": "nuxt build examples/demo",
+    "spa": "nuxt build examples/demo --spa",
+    "generate": "nuxt generate examples/demo",
     "lint": "eslint lib src test",
     "lint-fix": "eslint --fix lib src test",
     "test": "npm run lint && jest",
-    "release": "standard-version && git push --follow-tags && npm publish"
+    "release": "standard-version && git push --follow-tags && npm publish",
+    "predeploy": "yarn generate --spa",
+    "deploy": "netlify deploy"
   },
   "eslintIgnore": [
     "lib/auth/plugin.js"
@@ -46,6 +51,7 @@
     "auth0-lock": "^11.2.3",
     "cookie": "^0.3.1",
     "dotprop": "^1.0.2",
+    "firebase": "^4.10.0",
     "js-cookie": "^2.2.0",
     "lodash": "^4.17.4"
   },
